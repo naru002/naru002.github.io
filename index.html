@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="KO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>스마트스토어</title>
+
+
+    <!--네이버 폰트 연결(나눔스퀘어)-->
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css" rel="stylesheet">
+
+    <!--폰트 어썸 아이콘 연결-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<style>
+
+    @font-face {
+    font-family: 'YOnepickTTF-Bold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2410-1@1.0/YOnepickTTF-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+    *{ /*전체 공통*/
+            box-sizing: border-box; /*크기 기준:테두리 선까지*/
+            margin: 0; /*여백 없애기*/
+            font-family: 'NanumSquare'; /*웹폰트 사용*/
+
+        }
+
+    ul { list-style: none; padding: 0;}
+
+    #ranking{ /*섹션 영역*/
+      
+        width: 95%; max-width: 1200px;
+        margin: 100px auto;
+    }
+
+    .sectionTitle { /*섹션 제목*/
+      
+      font-family: 'YOnepickTTF-Bold';
+      color: #e100ff;
+      font-weight: bold;
+      margin: 1em 0;
+      text-align: center;
+      padding: 1em 0;
+      font-size: 3em;
+    }
+
+    #listBox {  /*리스트박스 ul*/
+       
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    } 
+
+
+    .list:hover .picture {
+        transform: scale(1.05);
+        
+        
+    }
+
+    .imageBox { /*상품 이미지용 박스*/
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 10px;
+        position: relative;
+    }
+
+    .no { /*베스트 넘버 아이콘 이미지*/
+        position: absolute; top: 0; left: 20px;
+        width: 15%;
+        opacity: 80%;
+        
+    }
+
+    .picture { /*상품 이미지*/
+        width: 100%; display: block;
+        transition: 0.3s;
+    }
+
+    .title{ /*상품 제목 문자*/
+        margin-bottom: 10px;
+    }
+
+    .text { /*상품 소개글*/
+        font-size: 0.8em; color: 333;
+        line-height: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    .price { /*판매 가격*/
+        font-size: 1.3em; color: #e00;
+        font-weight: bold;
+        display: inline-block;
+    }
+
+    .price2 { /*할인 전 가격*/
+        color: #888; font-size: 0.9em;
+        text-decoration: line-through;
+        display: inline-block;
+    } 
+
+    .iconBox {
+        position: absolute;
+        bottom: 15%; left: 0;
+        width: 100%;
+        text-align: center;
+        opacity: 0;
+        transition: 0.3s;
+    }
+
+    .list:hover .iconBox {opacity: 1;}
+
+
+    .icon {
+        color: rgb(255, 41, 41);
+        font-size: 2em;
+        margin: 0 5px;
+    }
+
+    .icon1 {
+        color: #fff;
+        font-size: 2em;
+        margin: 0 5px;
+    }
+
+/*테블릿 화면 (850px 이하 화면폭)*/
+
+@media screen and (max-width:850px) {
+    #listBox {  /*리스트박스 ul*/
+        grid-template-columns: repeat(2, 1fr);
+    } 
+}
+
+/*스마트폰 화면 (450px 이하 화면폭)*/
+@media screen and (max-width:450px) {
+    #listBox {  /*리스트박스 ul*/
+        grid-template-columns: 1fr;
+    } 
+}
+
+
+</style>
+
+</head>
+
+<body>
+    <section id="ranking">
+        <h2 class="sectionTitle">주간 RANKING</h2>
+
+        <ul id="listBox">
+            <li class="list">
+                <div class="imageBox">
+                    <img src="images/image1.jpg" alt="이미지" class="picture">
+                    <img src="images/01.png" alt="베스트1" class="no">
+                    <div class="iconBox">
+                        <i class="fa-solid fa-heart-circle-check icon"></i>
+                        <i class="fa-solid fa-square-plus icon1"></i>
+                    </div>
+                </div>
+
+                <h3 class="title">[모델강추] 제이뷰 롱 세미부츠컷 슬랙스 오피스룩 하객룩</h3> <!--제목-->
+                <p class="text">✔과하지 않은 세미부츠컷 디자인에 기장도 길게 내려오는 제품이라 세련된 느낌으로 연출할 수 있었어요. 롱한 기장 슬랙스 찾고계시는 고객님은 무조건 추천입니다!</p><!--제품 설명-->
+                <h3 class="price"> 47,000원</h3> <!--할인 가격-->
+                <p class="price2">64,000원</p>  <!--원래 가격-->
+            </li>
+
+
+            <li class="list">
+                <div class="imageBox">
+                    <img src="images/image2.jpg" alt="이미지" class="picture">
+                    <img src="images/02.png" alt="베스트2" class="no">
+                    <div class="iconBox">
+                        <i class="fa-solid fa-heart-circle-check icon"></i>
+                        <i class="fa-solid fa-square-plus icon1"></i>
+                    </div>
+                </div>
+
+                <h3 class="title">[clearance sale] [자체제작/당일발송] 청순 벨트 데일리 하객 원피스</h3> <!--제목-->
+                <p class="text">✔하객원피스는 보통 과한느낌이 있어서 데일리로는 입기가 어려운데 이 제품은 데일리로 입어도 과하지 않고 하객룩으로 입기에도 깔끔하고 고급스러운 느낌이라 활용도가 정말 좋았던 제품이에요.</p> <!--제품 설명-->
+                <h3 class="price">35,400원</h3> <!--할인 가격-->
+                <p class="price2">59,000원</p> <!--원래 가격-->
+            </li>
+
+
+            <li class="list">
+                <div class="imageBox">
+                    <img src="images/image3.jpg" alt="이미지" class="picture">
+                    <img src="images/03.png" alt="베스트3" class="no">
+                    <div class="iconBox">
+                        <i class="fa-solid fa-heart-circle-check icon"></i>
+                        <i class="fa-solid fa-square-plus icon1"></i>
+                    </div>
+                </div>
+
+                <h3 class="title">[당일발송] 리즈 벨트 블라우스 하객룩 휴가룩</h3> <!--제목-->
+                <p class="text">✔소재 자체가 청순하고 고급스럽고 다 한 제품이에요. 사진처럼 슬랙스에 코디하면 하객룩, 모임룩으로 입기 좋고 저는 숏팬츠에 코디해서 데일리룩으로도 자주 입고 나간답니다.</p> <!--제품 설명-->
+                <h3 class="price"> 44,000원</h3><!--할인 가격-->
+                <p class="price2"> 58,000원</p> <!--원래 가격-->
+            </li>
+
+
+            <li class="list">
+                <div class="imageBox">
+                    <img src="images/image4.jpg" alt="이미지" class="picture">
+                    <img src="images/04.png" alt="베스트4" class="no">
+                    <div class="iconBox">
+                        <i class="fa-solid fa-heart-circle-check icon"></i>
+                        <i class="fa-solid fa-square-plus icon1"></i>
+                    </div>
+                </div>
+
+                <h3 class="title">[모델추천] 타임 만능코디 썸머 골지 니트</h3> <!--제목-->
+                <p class="text">✔일반 니트에 비해 탄탄하게 짜여진 제품이라 타 제품에 비해 늘어짐도 적고 오래오래 예쁘게 착용할 수 있는 제품이에요. 많은 하의와 코디한 니트로 소장하시면 정말 자주입게 되실거예요.</p> <!--제품 설명-->
+                <h3 class="price">32,000원</h3> <!--할인 가격-->
+                <p class="price2">52,000원</p>  <!--원래 가격-->
+            </li>
+        </ul>
+
+
+
+
+    </section>
+
+
+
+    
+</body>
+</html>
