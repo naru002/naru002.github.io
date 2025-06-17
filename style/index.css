@@ -1,0 +1,433 @@
+@charset "utf-8";
+
+
+@font-face {
+    font-family: 'Paperlogy-8ExtraBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Hahmlet-Regular';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/Hahmlet-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+* { /*모든 요소 공통*/
+    font-family: 'NanumSquareNeo';
+    box-sizing: border-box;
+    margin: 0;
+}
+
+ul{ /*모든 리스트 공통*/
+    list-style: none; padding: 0;
+}
+
+
+a{ /*모든 링크 공통-밑줄 제거*/
+    text-decoration: none;
+}
+
+
+/* ----------------------네비게이션----------------------------------*/
+
+#navBox { /*네비 박스 전체*/
+    width: 100%; height: 65px;
+    background: rgba(255,255,255,.7); 
+    box-shadow: 0 3px 5px rgba(0,0,0,.3);
+    position: fixed; /*화면에 고정*/
+    top: 0; left: 0;
+
+    z-index: 5;
+}
+
+#navBox2 { /*1300 안쪽 박스*/
+    width: 100%; max-width: 1700px;
+    margin: auto; 
+    display: flex; 
+    
+}
+
+#logoBox{ /*로고 박스,*/
+    width: 20%; 
+}
+
+#navi { /*네비게이션*/
+    width: 60%;
+
+}
+
+#iconBox {
+    width: 20%; text-align:right
+}
+
+.icon0 {
+    font-size: 1.5em;   margin: 20px 20px;
+    color: #aaa;
+}
+.icon0:hover {
+    color: #000;
+    transform: scale(1.1);
+}
+
+#menu { /*메뉴 리스트 박스 ul*/
+    display: flex;
+    justify-content: end;
+}
+
+.main > a { /*각 메뉴 링크*/
+    display: block;
+    line-height: 60px; padding: 0 2em;
+    color: #111;
+    transition: 0.3s;
+    position: relative;
+    font-family: 'Paperlogy-8ExtraBold';
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.main> a::after{ /*메인 링크에 추가될 내용*/
+    content: ""; /*내용 없이 공간만 추가*/
+    width: 0; height: 5px;
+    background: rgb(245, 200, 38);
+    transition: 0.3s;
+    position: absolute; bottom: 0; left: 50%; /*밑쪽 바 위치*/
+    transform: translateX(-50%);
+}
+
+.main > a:hover::after {width: 100%;}
+.main > a:hover {
+     color: rgb(245, 200, 38);
+}
+
+
+#header { 
+    position: relative;
+    margin-top: 60px;
+}
+
+#headerImage{ /*헤더 이미지*/
+    width: 100%; height: 70%; display: block;
+    opacity: 0.8;
+}
+
+#headerBox { /*헤더 내용 이미지 박스*/
+    position: absolute;
+    top: 40%; left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: rgb(245, 200, 38); text-align: center;
+    width: 100%;
+    
+}
+
+#title1 { /*첫 번째 타이틀 */
+    font-family: 'MaruBuriBold';
+    font-size: 10em;
+    margin-bottom: 10px;
+    animation: title 1s both cubic-bezier(0, 0, 0.09, 0.94);
+    text-shadow: 4px 5px 3px rgba(0,0,0,.7) ;
+}
+
+#title2 { /*두 번째 타이틀*/
+   font-size: 1.4em;
+   margin: 15px 0 15px 0;
+   text-shadow: 2px 2px 0px rgba(0,0,0,.9) ;
+   animation-delay: 0.3s;
+   
+}
+
+@keyframes title{ 
+    from {transform: translateY(100%); opacity: 0;}
+    to {transform: translateY(-10%); opacity: 1;}
+}
+
+
+/*섹션 공통 사항*/
+
+section {
+    width: 100%; max-width: 1300px; 
+    margin: 100px auto;
+    text-align: center;
+
+}
+
+.sectionTitle1 {  /*섹션 제목*/
+    font-family: 'Paperlogy-8ExtraBold';
+    font-size: 2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.sectionTitle2 {
+    margin-bottom: 2em;
+}
+
+.sectionTitle1::before { /*섹션 타이틀 앞에 추가되는 내용*/
+    content: url(../images/icon.png);
+    margin-right: 10px;
+}
+
+
+.sectionTitle1::after {
+    content: url(../images/icon.png);
+    margin-left: 8px;
+}
+
+section h2 {
+    padding-bottom: 30px;
+}
+
+section h3 { /*모든 섹션 안의 모든 h3*/
+    font-family: 'MaruBuriBold';
+    font-size: 1.5em;
+    margin: 0.8em;
+    text-transform: uppercase;
+}
+
+section p {
+    font-family: 'Hahmlet-Regular';
+    line-height: 1.5em;
+    margin: 1em;
+}
+
+
+/*---------섹션 1 영역------------*/
+
+#listBox1 {
+    position: relative;
+}
+
+#collection {
+ width: 80%; 
+  margin: auto;
+  overflow: hidden;
+}
+
+#collection > ul {
+  display: flex;
+  width: calc(100% * (5 / 3)); /* 5개 중 3개 보여줄 경우 */
+  transition: transform 0.5s ease;
+}
+
+#collection .list1 {
+  width: calc(100% / 5); /* 각 아이템의 너비: 총 5개 */
+  flex-shrink: 0;
+  text-align: center;
+}
+
+#carousel {
+  display: flex;
+  width: calc(100% * (totalItems / visibleItems)); /* 예: 6/3 = 200% */
+  transition: transform 0.5s ease;
+}
+
+#carousel .list1 {
+  width: calc(100% / totalItems); /* = 16.6667% */
+  flex-shrink: 0;
+}
+
+#listBox1 > .icon1 {
+    position: absolute; top: 40%; left: 5%;
+    transform: translateY(-50%);
+    font-size: 3em;
+}
+#listBox1 > .icon2 {
+    position: absolute; top: 40%; right: 5%;
+    transform: translateY(-50%);
+    font-size: 3em;
+}
+
+.list1 {
+    cursor: pointer;
+}
+
+.list1:hover > .watch {
+    transform: scale(1.1);
+}
+
+.list1:hover > h3 {
+    color: rgb(245, 200, 38);
+    transform: scale(1.1);
+}
+
+.list1:hover > p {
+    color: #0738d9;
+    transform: scale(1.1);
+}
+
+.watch {
+    width: 100%; display: block;
+    margin-top: 20px;
+
+}
+
+/*----------섹션2 영역 ------------*/
+
+#listBox2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+    margin-top: 20px;
+}
+
+.video1 {width: 100%; display: block;}
+
+
+/*-----------섹션 3 영역-------------*/
+
+#listBox3 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    transition: 0.3s;
+}
+
+.list3 {
+    cursor: pointer;
+}
+
+.list3 > h3 {
+    font-size: 1.2em;
+}
+
+.list3Span {
+    color: #0738d9;
+    font-family: 'MaruBuriBold';
+}
+
+.watch2 {
+    width: 100%; display: block;
+}
+
+
+.list3:hover > .watch2 {
+    transform: scale(1.1);
+}
+
+.list3:hover > h3  {
+    color: rgb(245, 200, 38);
+    transform: scale(1.1);
+}
+
+
+.list3:hover > p {
+    color: #0738d9;
+    transform: scale(1.1);
+}
+
+
+/*------------섹션4 영억--------------*/
+
+#listBox4    {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+    margin-top: 20px;
+}
+
+
+.list4H {
+    width: 100%; display: block;
+}
+
+
+#button4 {
+    border: 1px solid #000;
+    color: #000;
+    background: #fff;
+    padding: 10px 30px;
+}
+
+#button4:hover {
+    color: #eee;
+    background: #000;
+}
+
+/*-----------섹션 5번 영역--------------*/
+
+#listBox5 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    text-align: left;
+    
+}
+
+.list5 {
+    background: #f5f5f5;
+}
+
+.list5 > h3 {
+    font-size: 1.3em;
+}
+
+.list5 a {
+    color: #000;
+}
+
+.boutique {
+    width: 100%; 
+}
+
+.icon5 {
+    color: #0738d9;
+    margin-right: 5px;
+}
+
+.list5 a:hover {
+    text-decoration: underline;
+    color: #0738d9;
+}
+
+
+/*------------푸터 영역-------------*/
+
+#footer{
+    width: 100%; background: #222;
+    padding: 2em 0;
+   
+}
+
+#footerBox {
+    width: 100% ; max-width: 88%; margin: auto;
+    display: flex;
+    align-items: center;
+    color: #eee;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+     justify-content: space-between;
+   
+}
+
+#footerBox2 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+    
+}
+
+#logo2 {
+    filter: brightness(200); 
+    transform: scale(0.8);
+}
+
+.footerlist > h3 {
+    font-size: 1.5em;
+    margin-bottom: 1.7em;
+}
+
+.footerlist > p {
+    margin: 2em 0;
+    cursor: pointer;
+}
+
+.footerIcon {
+    cursor: pointer;
+}
+
+
