@@ -1,292 +1,104 @@
 <!DOCTYPE html>
-<html lang="KO">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>포트폴리오</title>
+    <title>Amazing Awaits</title>
 
-    <!--네이버 폰트 연결(나눔스퀘어 네오)-->
-    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-neo.css" rel="stylesheet">
+    <link rel="shortcut icon" href="images/icon1.png" type="image/x-icon">
 
-    <!--네이버 폰트 연결(섹션 제목용 : 마루부리)-->
-    <link href="https://hangeul.pstatic.net/hangeul_static/css/maru-buri.css" rel="stylesheet">
+    <!--네이버 폰트(나눔스퀘어라운드-본문용)-->
+    <link href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css" rel="stylesheet">
 
     <!--폰트 어썸 아이콘 연결-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!--스타일 파일 연결-->
+    <!--외부 스타일 시트 연결-->
     <link rel="stylesheet" href="style/index.css">
-
-    <!--파비콘 연결-->
-    <link rel="shortcut icon" href="images/favicon1.png" type="image/x-icon">
-
-    <!--애니메이션 사이트 연결-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
 
 </head>
 
 <body>
     
-<div id="navBox"> <!--상단 고정 네비게이션 박스-->
+    <header id="header">
+        <video src="video/Sequence 01_1.mp4" autoplay muted playsinline loop poster="images/Sequence 01.00_00_00_02.Still001.png" id="headerVideo"></video>
 
-    <div id="navBox2"> <!--안쪽 1200 박스 (로고 메뉴)-->
+        <h1 id="headerTitle">AMAZING AWAITS</h1>
 
-        <div id="logoBox">
-            <a href="index.html"><img src="images/logo.png" alt="로고이미지"></a>
-
+        <div id="enquire">
+            <a href="#" id="enquire1"><i class="fa-solid fa-magnifying-glass"></i></a>
+            <a href="#" id="enquire2">ENQUIRE</a>
         </div>
 
         <nav id="navi">
+            <button id="hamburger"><i class="fa-solid fa-bars"></i></button>
+            <a href="index.html"><img src="images/logo1.png" alt="logo" id="logo"></a>
             <ul id="menu">
-                <li class="main"><a href="#">collection</a></li>
-                <li class="main"><a href="#">watch</a></li>
-                <li class="main"><a href="#">strap</a></li>
-                <li class="main"><a href="#">service</a></li>
-                <li class="main"><a href="#">store</a></li>
-                <li class="main"><a href="#">business</a></li>
+                <li class="main"><a href="#" class="mainLink">CHARTER</a>
+                    <ul class="sub">
+                        <li><a href="#" class="subLink">ALL YACHTS</a></li>
+                        <li><a href="#" class="subLink">DESTINATIONS</a></li>
+                        <li><a href="#" class="subLink">LAST MINUTE</a></li>
+                        <li><a href="#" class="subLink">GUIDE</a></li>
+                    </ul>
+                </li>
+                <li class="main"><a href="#" class="mainLink">PURCHASE</a>
+                     <ul class="sub">
+                        <li><a href="#" class="subLink">ALL YACHTS</a></li>
+                        <li><a href="#" class="subLink">GUIDE TO YACHT</a></li>
+                        <li><a href="#" class="subLink">RECENT SALES</a></li>
+                        <li><a href="#" class="subLink">MEET THE TEAM</a></li>
+                    </ul>
+                
+                </li>
+                <li class="main"><a href="#" class="mainLink">SELL</a>
+                     <ul class="sub">
+                        <li><a href="#" class="subLink">YACTHS SOLE</a></li>
+                        <li><a href="#" class="subLink">GUIDE TO SELLING</a></li>
+                        <li><a href="#" class="subLink">YACHT MARKETING</a></li>
+                    </ul>
+                
+                </li>
+                <li class="main"><a href="#" class="mainLink">BUILD</a>
+                     <ul class="sub">
+                        <li><a href="#" class="subLink">OFFER</a></li>
+                        <li><a href="#" class="subLink">SHIPYARDS</a></li>
+                        <li><a href="#" class="subLink">YACHT DESIGNESRS</a></li>
+                        <li><a href="#" class="subLink">MEET THE TEAM</a></li>
+                    </ul>
+                
+                </li>
+                <li class="main"><a href="#" class="mainLink">MANAGE</a>
+                     <ul class="sub">
+                        <li><a href="#" class="subLink">OUR YACHT</a></li>
+                        <li><a href="#" class="subLink">YACHT CHARTER</a></li>
+                        <li><a href="#" class="subLink">YACHT MARKETING</a></li>
+                        <li><a href="#" class="subLink">MEET THE TEAM</a></li>
+                    </ul>
+                
+                </li>
+                <li class="main"><a href="#" class="mainLink">ABOUT</a>
+                     <ul class="sub">
+                        <li><a href="#" class="subLink">ABOUT US</a></li>
+                        <li><a href="#" class="subLink">OUR TEAM</a></li>
+                        <li><a href="#" class="subLink">SUSTAINABILITY</a></li>
+                    </ul>
+                
+                </li>
             </ul>
         </nav>
-        <div id="iconBox">
-           <a href="#"> <i class="fa-solid fa-magnifying-glass icon0"></i></a>
-            <a href="#"><i class="fa-regular fa-heart icon0"></i></a>
-            <a href="#"><i class="fa-regular fa-user icon0"></i></a>
-            
+
+        <div id="searchBox">
+            <i class="fa-solid fa-magnifying-glass" id="search"></i>
+            <h2 id="searchTitle">EXPLRER YACHT WITH DRIVE</h2>
+            <button id="searchButton">SEARCH</button>
         </div>
 
-    </div>
-
-
- </div> <!--상단 고정 네비게이션 박스-->
-
- <header id="header">
-    <img src="images/img.png" alt="배경 이미지" id="headerImage">
-        <div id="headerBox">
-            <h1 id="title1">BREITLING</h1>
-            <p id="title2" class="animate__animated animate__flipInX">Swiss Luxury Watches of Style.</p>
-            
-
-        </div>
- </header>
-
-<section id="sec1"> <!-- 섹션1 영역 -->
-    <h2 class="sectionTitle1">collection</h2>
-    
-<ul id="listBox1">
-     <button class="icon1"><i class="fa-solid fa-chevron-left"></i></button>
-        <div id="collection">
-            <ul id="carousel">
-                <li class="list1">
-                    <img src="images/watch1.webp" alt="시계" class="watch">
-                    <h3>Avenger</h3>
-                    <p>Power in Action <br>The Modern Performance Aviation Watch.</p>
-                    
-                </li>
-
-                <li class="list1">
-                    <img src="images/watch2.webp" alt="시계" class="watch">
-                    <h3>Premier</h3>
-                    <p>Breitling DNA <br> The Heritage-Inspired Dress Watch.</p>
-                </li>
-
-                <li class="list1">
-                    <img src="images/watch3.webp" alt="시계" class="watch">
-                    <h3>Chronomat</h3>
-                    <p>Purpose, Action, Style <br> The All-Purpose Sports-Chic Watch.</p>
-                </li>
-
-                <li class="list1">
-                    <img src="images/watch4.webp" alt="시계" class="watch">
-                    <h3>Classic AVI</h3>
-                    <p>Aviation Heritage <br> The Pioneering Pilot’s Watch</p>
-                </li>
-
-                <li class="list1">
-                    <img src="images/watch5.webp" alt="시계" class="watch">
-                    <h3>Professional</h3>
-                    <p>For Adventurers <br> Instruments for Professionals</p>
-                </li>
-
-                <li class="list1">
-                    <img src="images/watch6.webp" alt="시계" class="watch">
-                    <h3>Top Timel</h3>
-                    <p>Need for Speed <br> The Unconventional Chronograph</p>
-                </li>
-            </ul>
-        </div>
-
-        <button class="icon2"><i class="fa-solid fa-chevron-right"></i></button>
-    </ul>
-
-    </section>
-
-    <section id="sec2"> <!--섹션 2 영역-->
-        <h2 class="sectionTitle1">our latest work</h2>
-        <ul id="listBox2">
-            <li class="list2">
-                <video src="video/Sequence 01.mp4" controls class="video1"></video>
-            </li>
-            <li class="list2">
-                <video src="video/Sequence 02.mp4" controls class="video1"></video>
-            </li>
-    </ul>
-</section>
-
-<section id="sec3"> <!--섹션 3 영역-->
-    <h2 class="sectionTitle1">Trending Now</h2>
-        <ul id="listBox3">
-            <li class="list3">
-                <img src="images/watch7.webp" alt="시계" class="watch2 watch2-1">
-                <h3><span class="list3Span"> Superocean</span> Heritage B31 Automatic 44</h3>
-                <p>KRW 12,200,000</p>
-            </li>
-
-            <li class="list3">
-                <img src="images/watch8.webp" alt="시계" class="watch2 watch2-2">
-                <h3><span class="list3Span"> Superocean</span> Heritage B31 Automatic 42</h3>
-                <p>KRW 9,730,000</p>
-            </li>
-
-            <li class="list3">
-                <img src="images/watch9.webp" alt="시계" class="watch2 watch2-3">
-                <h3><span class="list3Span"> Superocean</span> Heritage B31 Automatic 40</h3>
-                <p>KRW 9,250,000</p>
-            </li> 
-
-            <li class="list3">
-                <img src="images/watch10.webp" alt="시계" class="watch2 watch2-4">
-                <h3><span class="list3Span"> Superocean</span> Heritage B31 Automatic 40 Kelly Slater</h3>
-                <p>KRW 9,650,000</p>
-            </li>
-
-        </ul>
-
-</section>
-
-<section id="sec4"> <!--섹션 4 영역-->
-    <h2 class="sectionTitle1">Signature Styles</h2>
-    <ul id="listBox4">
-            <li class="list4">
-                <a href="#"><img src="images/man.jpg" alt="사람" class="list4H"></a>
-                <h3>Signature for man</h3>
-                <a href="#" id="button4">View All Watches</a>
-            </li>
-
-            <li class="list4">
-                <a href="#"><img src="images/women.jpg" alt="사람" class="list4H"></a>
-                <h3>Signature for woman</h3>
-                <a href="#" id="button4">View All Watches</a>
-            </li>
-    </ul>
-
-    
-</section>
-<section id="sec5"> <!--섹션 5 영역-->
-    <h2 class="sectionTitle1">breitling boutique</h2>
-    <ul id="listBox5">
-            <li class="list5">
-                <img src="images/boutique1.png" alt="매장" class="boutique">
-                <h3>breitling boutique hannam</h3>
-                <p><i class="fa-solid fa-location-dot icon5"></i>서울 용산구 녹사평대로 132 브라이틀링 한남 부티크</p>
-                <p><i class="fa-solid fa-phone icon5"></i><a href="tel:02-792-4371">02-792-4371</a></p>
-                
-                
-            </li>
-
-            <li class="list5">
-                <img src="images/boutique2.png" alt="매장" class="boutique">
-                <h3>breitling boutique the hyundal seoul</h3>
-                <p><i class="fa-solid fa-location-dot icon5"></i>서울 영등포구 여의도동 여의대로 108</p>
-                <p><i class="fa-solid fa-phone icon5"></i><a href="tel:02-3277-8589">02-3277-8589</a></p>
-                
-                
-            </li>
-
-            <li class="list5">
-                <img src="images/boutique3.png" alt="매장" class="boutique">
-                <h3>breitling boutique shinsegae daejeon art & science </h3>
-                <p><i class="fa-solid fa-location-dot icon5"></i>대전 유성구 엑스포로 1 대전신세계Art&Science 1층</p>
-                <p><i class="fa-solid fa-phone icon5"></i><a href="tel:042-607-8133">042-607-8133</a></p>
-                
-            
-            </li>
-    </ul>
-
-    
-</section>
-    
-
-<footer id="footer">
-    <div id="footerBox">
-        <a href="index.html"><img src="images/logo2.png" alt="logo" id="logo2"></a>
-            <ul id="footerBox2">
-                <li class="footerlist">
-                    <h3>고객서비스</h3>
-                    <p>FAQ</p>
-                    <p>부티크 찾기</p>
-                    <p>브라이틀링 서비스</p>
-                    <p>브라이틀링 등록하기</p>
-                </li>
-
-                <li class="footerlist">   
-                    <h3>신제품</h3>
-                    <p>여성용 시계</p>
-                    <p>남성용 시계</p>
-                    <p>골드 시계</p>
-                    <p>한정판</p>
-                </li>
-
-                <li class="footerlist">
-                    <h3>기업소개</h3>
-                    <p>브라이틀링 도서</p>
-                    <p>파트너십</p>
-                    <p>지속가능성</p>
-                    <p>브라이틀링 카탈로그 다운로드</p>
-                </li>
-
-                <li class="footerlist">
-                    <h3>소셜 네트워크</h3>
-                    <img src="images/icon1.png" alt="소셜 아이콘" class="footerIcon">
-                    <img src="images/icon2.png" alt="소셜 아이콘" class="footerIcon">
-                    <img src="images/icon3.png" alt="소셜 아이콘" class="footerIcon">
-                    <img src="images/icon4.png" alt="소셜 아이콘" class="footerIcon">
-                </li>
-            </ul>
         
         
-    </div>
-</footer>
 
+    </header>
 
-
-
-
-<script>
-    const carousel = document.getElementById("carousel");
-    const totalItems = 5;
-    const visibleItems = 3;
-    let currentIndex = 0;
-
-    document.querySelector(".icon1").addEventListener("click", () => {
-    if (currentIndex > 0) {
-        currentIndex--;
-        updateCarousel();
-    }
-    });
-
-    document.querySelector(".icon2").addEventListener("click", () => {
-    const maxIndex = totalItems - visibleItems;
-    if (currentIndex < maxIndex) {
-        currentIndex++;
-        updateCarousel();
-    }
-    });
-
-    function updateCarousel() {
-    const shift = (100 / totalItems) * currentIndex * visibleItems;
-    carousel.style.transform = `translateX(-${shift}%)`;
-    }
-</script>
 
 
 
