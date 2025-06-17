@@ -1,0 +1,256 @@
+@charset "UTF-8"; /*문자 인코딩-유니코드 사용 (화면이 어떻게 보이게 하냐)*/ 
+
+/*제목용 폰트*/
+@font-face {
+    font-family: 'SBAggroB';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SBAggroB.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* { /*모든 요소 공통*/
+    font-family: 'NanumSquareRound';
+    box-sizing: border-box;
+    margin: 0;
+}
+
+ul{ /*모든 리스트 공통*/
+    list-style: none; padding: 0;
+}
+
+
+a{ /*모든 링크 공통-밑줄 제거*/
+    text-decoration: none;
+}
+
+ /*헤더 영역 - FullScreen*/
+#header {
+    width: 100%; height: 100vh;
+
+    position: relative; /*배치를 위한 기준*/
+    overflow: hidden;  /*헤더 밖 내용 숨기기*/
+}
+
+#headerVideo{ 
+    position: absolute;
+    top: 50%; left: 50%; 
+    transform: translate(-50%, -50%);
+
+    /*헤더를 기준으로 최소 100% 채워 보이기*/
+    min-width: 100%; min-height: 100%;
+}
+
+#headerTitle { /*헤더 제목 문자*/
+    font-family: 'SBAggroB';
+    color: #fff;
+    font-size: 5vw; /*뷰-위드에 대한 5%*/
+    width: 100%; text-align: center;
+    text-shadow: 0 0 10px rgba(0,0,0.3) ;
+    position: absolute;
+    top: 50%; left: 50%; 
+    transform: translate(-50%, -50%);
+
+    
+}
+
+#enquire{
+    position: absolute;
+    top: 20px; right: 20px;
+}
+
+#enquire1 {
+    color: #fff;
+    font-size: 1.3em;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+#enquire1:hover {
+    color: rgb(253, 219, 27)
+
+}
+
+#enquire2 {
+    background-color: rgb(253, 212, 27);
+    padding: 0.5em;
+    color: #fff;
+    border-radius: 3px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#enquire2:hover {
+    background-color: #fff;
+    color: #222;
+}
+
+#navi{
+
+    position: absolute;
+    top: 20px; left: 20px;
+
+    width: 85%; height: 34px;
+    display: flex; /*한 줄에 내용 배치 & */
+    align-items: center;
+
+
+
+}
+
+#hamburger {
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: #1f1f1f;
+    cursor: pointer; /*커서 검지 손가락 모양*/
+    display: none;  /*숨김 상태로 시작*/
+}
+
+#logo {
+    height: 30px;
+    margin: 0 20px;
+}
+
+#menu {
+    font-weight: bold;
+    display: flex;
+    background-color: rgba(0,0,0,.3);
+    border-radius: 5px;
+    
+}
+
+
+.main{ /*메인메뉴*/
+    position: relative;
+
+}
+
+.mainLink { /*메인메뉴 링크*/
+    
+    display: block;
+    color: #fff; line-height: 34px;
+    padding: 0 2em;
+    transition: 0.3s;
+}
+
+.mainLink:hover {
+    background: rgba(0,0,0,.3);
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.main:hover > .mainLink {
+     background: rgba(0,0,0,.3);
+}
+
+.sub { /*서브메뉴-메인메뉴 아래에 배치*/
+    position: absolute;
+    top: 100%; left: 0;
+    width: 150%; min-width: 200px;
+    background: rgba(0,0,0,.1);
+    display: none;
+    border-radius: 10px;
+    
+}
+
+.main:hover > .sub {display: block;}
+
+.subLink { /*서브 메뉴 링크*/
+    display: block;
+    color: #fff; line-height: 30px;
+    padding: 0.2em 1em; 
+    transition: 0.3s;
+}
+
+.subLink:hover { 
+    background: rgba(255, 255, 255, 0.8);
+    transition: 0.3s;
+    color: #222;
+    border-radius: 10px;
+
+}
+
+#searchBox { /*하단 내용 박스*/
+    border: 5px solid #ffc400;
+    position: absolute;
+    bottom: 50px; left: 50%;
+    transform: translateX(-50%);
+    width: 95%; max-width: 800px;
+    padding: 10px;
+    display: flex; align-items: center; /*상하 중간으로 정렬*/
+    justify-content: space-between;  /*좌 우측 끝으로 정렬*/
+    transition: .3s;
+ 
+}
+
+#search {
+    font-size: 1.5em; color: #ffc400;
+    width: 80px;
+}
+
+#searchTitle {
+    color: #fff;
+}
+
+#searchButton {
+    background: #fff; border: none;
+    padding: 1.2em;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#searchBox:hover {
+    background: #ffc400;
+}
+
+#searchBox:hover > #search { color: #222; }
+#searchBox:hover > #searchButton {
+    background: #222; color: #fff;
+}
+
+
+
+/* 900px이하 화면용 스타일 */
+@media screen and (max-width:900px) {
+    #hamburger {display: block;} /*메뉴버튼 보이기*/
+    #menu { 
+        display: block;  /*리스트를 아래 방향으로 배치하기*/
+        width: 180px;
+        position: absolute; top: 50px ;
+    }
+
+   
+
+    .sub { /*서브메뉴 - 메인메뉴 옆으로 이동*/
+        top: 0; left: 100%;
+        width: 100%; min-width: 100%;
+    }
+
+    .subLink {
+        line-height: 35px;
+    }
+}
+
+
+/* 태블릿 화면용 스타일 (850px이하 ) */
+@media screen and (max-width:850px) {
+    #headerTitle {font-size: 7vw;}
+}
+
+/* 스마트폰 화면용 스타일 (450px이하 ) */
+@media screen and (max-width:450px) {
+    #headerTitle {font-size: 10vw;}
+
+
+    #search { display: none;} /*돋보기 아이콘 숨김*/
+    #searchTitle {font-size: 1rem;}
+    #searchButten{ padding: 0.5rem;}
+ }
+
+
+
+
+
+
