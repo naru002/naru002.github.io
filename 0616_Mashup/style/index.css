@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+/* index.html 페이지용 스타일*/
+
+#listBox {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.box { 
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.box > img {
+    width: 100%; display: block;
+}
+.caption {
+    position: absolute;
+    top: 2rem; bottom: 2rem; left: 2rem; right: 2rem;
+    background: rgba(255,255,255,.5);
+    background-clip: blur(3px);
+    text-align: center;
+     opacity: 0;
+    transition: 0.3s;
+}
+
+.caption > div {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.caption > div > button {
+    background: #FF7C00; color: #fff;
+    border: none; padding: 0.5rem;
+    border-radius: 3px;
+    transition: 0.3s; margin-top: 0.5rem;
+    cursor: pointer;
+   
+}
+
+.box:hover .caption {
+    opacity: 1;
+}
+
+.caption > div > button:hover {
+    background: #2B8C44;
+}
+
+.caption > div > h3 {
+    font-size: 1.7rem;
+}
+
+
+
+

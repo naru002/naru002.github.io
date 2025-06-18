@@ -1,0 +1,40 @@
+@charset "utf-8";
+
+
+/*contact.html 페이지용 스타일*/
+
+#listBox {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.form1 {
+    width: 100%; 
+    line-height: 40px; padding: 0 1rem;
+    margin-bottom: 0.5rem;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.form1:focus {
+    background: #ecfdfc;
+}
+
+.list a {
+    color:  #666;
+}
+
+.icon {
+    margin-right: 0.8rem;
+}
+
+.list a:hover {color :#4d50ff;}
+
+.icon1 {
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+
+
+
