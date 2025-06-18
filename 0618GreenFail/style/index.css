@@ -1,0 +1,456 @@
+@charset "utf-8";
+
+* { /*모든 요소 공통*/
+    font-family: 'NanumSquareNeo';
+    box-sizing: border-box;
+    margin: 0;
+}
+
+ul{ /*모든 리스트 공통*/
+    list-style: none; padding: 0;
+}
+
+
+a{ /*모든 링크 공통-밑줄 제거*/
+    text-decoration: none;
+}
+
+
+/* ----------------------네비게이션----------------------------------*/
+
+#navBox { /*네비 박스 전체*/
+    width: 100%; height: 60px;
+    background: #fff; 
+    box-shadow: 0 3px 5px rgba(0,0,0,.3);
+    position: fixed; /*화면에 고정*/
+    top: 0; left: 0;
+
+    z-index: 5;
+}
+
+#navBox2 { /*1200 안쪽 박스*/
+    width: 100%; max-width: 1200px;
+    margin: auto; 
+    display: flex; 
+    
+}
+
+#logoBox{ /*로고 박스,*/
+    width: 20%;
+}
+
+#navi { /*네비게이션*/
+    width: 80%;
+    
+}
+
+#hamburger { /*모바일용 햄버거 버튼*/
+    width: 60px; line-height: 60px;
+    font-size: 1.3rem; cursor: pointer;
+    display: none;
+}
+
+#menu { /*메뉴 리스트 박스 ul*/
+    display: flex;
+    justify-content: end;
+}
+
+.main { } /*각 메뉴 리스트 li*/
+.main > a { /*각 메뉴 링크*/
+    display: block;
+    line-height: 60px; padding: 0 1em;
+    color: #111;
+    font-family: 'MaruBuriBold';
+    transition: 0.3s;
+    position: relative;
+}
+.main> a::after{ /*메인 링크에 추가될 내용*/
+    content: ""; /*내용 없이 공간만 추가*/
+    width: 0; height: 5px;
+    background: #67BC04;
+    transition: 0.3s;
+    position: absolute; bottom: 0; left: 50%; /*밑쪽 바 위치*/
+    transform: translateX(-50%);
+}
+
+.main > a:hover::after {width: 100%;}
+.main > a:hover {
+     color: #67BC04;
+}
+
+
+/*----------------헤더 영역--------------------*/
+#header { 
+    position: relative;
+    margin-top: 60px;
+}
+
+#headerImage{ /*헤더 이미지*/
+    width: 100%; display: block;
+}
+
+#headerBox { /*헤더 내용 이미지 박스*/
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: #fff; text-align: center;
+    width: 100%;
+}
+
+#title1 { /*첫 번째 타이틀 */
+    font-weight: normal;
+    animation: title 1s both cubic-bezier(0, 0, 0.09, 0.94);
+}
+
+#title2 { /*두 번째 타이틀*/
+   font-family: 'NanumSquareNeoHeavy';
+   font-size: 2.8em;
+   margin: 15px 0 15px 0;
+   animation: title2 1s 0.2s both cubic-bezier(0, 0, 0.09, 0.94);
+}
+
+#title3 { /*세 번째 타이틀*/
+    margin-bottom: 20px;
+    animation: title3 1s 0.4s both cubic-bezier(0, 0, 0.09, 0.94);
+}
+
+#button1 { /*READ MORE 버튼*/
+    background: #67BC04;
+    color: #fff;
+    padding: 10px 20px;
+    transition: 0.3s;
+    font-weight: bold;
+
+}
+
+#button1:hover {
+    background: #117302;
+}
+
+@keyframes title{ 
+    from {transform: translateY(100%); opacity: 0;}
+    to {transform: translateY(-10%); opacity: 1;}
+}
+
+@keyframes title2{ 
+    from {transform: translateY(100%); opacity: 0;}
+    to {transform: translateY(-30%); opacity: 1;}
+}
+@keyframes title3{ 
+    from {transform: translateY(100%); opacity: 0;}
+    to {transform: translateY(-20%); opacity: 1;}  
+}
+
+/*섹션 공통 사항*/
+
+section {
+    width: 100%; max-width: 1200px; 
+    margin: 100px auto;
+    text-align: center;
+
+}
+
+.sectionTitle1 {  /*섹션 제목*/
+    font-family: 'MaruBuriBold';
+    font-size: 2em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.sectionTitle2 {
+    margin-bottom: 2em;
+}
+
+.sectionTitle1::before { /*섹션 타이틀 앞에 추가되는 내용*/
+    content: url(../images/favicon2.png);
+    margin-right: 10px;
+}
+
+section h3 { /*모든 섹션 안의 모든 h3*/
+    font-family: 'MaruBuriBold';
+    font-size: 1.5em;
+    margin: 1.5em 0;
+    text-transform: uppercase;
+}
+
+section p {
+    line-height: 1.5em;
+    margin-bottom: 1em;
+}
+
+
+/*-------------섹션1(Welcome) 영역----------*/
+
+#listBox1 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+}
+
+.icon1 {
+    font-size: 4em; color: #333;
+    border: 1px solid #333;
+    width: 2em; line-height: 2em;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.list1:hover > .icon1{
+    background: #67BC04; color: #fff;
+    border: 1px solid #67BC04;
+    transform: rotate(360deg);
+}
+
+.list1:hover > h3 { color: #67BC04;}
+
+
+/*-------------섹션2(latest Work) 영역----------*/
+
+#listBox2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+}
+
+.video2 {width: 100%; display: block;}
+
+.youtubeBox { /*반응형을 위한 유튜브 박스*/
+    width: 100%; height: 0;
+    padding-bottom: 56.25%; /*16:9 비율의 세로 폭*/
+    position: relative;
+}
+
+.youtube { /*유튜브 영상-유튜브 박스에 맞추기*/
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+}
+
+
+/*---------------섹션3(Event) 영역-------------*/
+
+.listBox3 { /*리스트 박스3 공통*/
+    display: flex;
+}
+
+.listBox3:last-child { /*마지막 번째 리스트 박스*/
+    flex-direction: row-reverse; /*좌우 순서 바꾸기*/
+}
+
+.list3 {
+    width: 50%;
+    background: #eee;
+}
+
+.lis3:last-child { /*마지막 리스트(텍스트가 포함된)*/
+    padding: 2em;
+}
+
+
+.list3 > img {
+    width: 100%; display: block;
+}
+
+
+.readMore {
+    background: #000;
+    color: #fff; padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: 0.3s;
+    margin-top: 1em; display: inline-block;
+}
+
+.readMore:hover {
+    background: #0669BF;
+}
+
+
+/*-----------섹션4 영역--------------*/
+
+#listBox4 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1em;
+    transition: 0.3s;
+    
+}
+
+.list4 > h3 {
+    font-size: 1.3em;
+}
+
+.image4 {
+    width: 100%; display: block;
+    border-radius: 5px;
+}
+
+
+.list4:hover > h3 { color: #F2B705; }
+
+.list4:hover > p {color: #0669BF;}
+
+.list4:hover > .image4 {
+    opacity: 0.9;
+}
+
+/*----------------섹션 5번 영역------------------*/
+
+
+#sec5 {
+    max-width: 100%;
+    background: #eee;
+}
+
+#box5 {
+    width: 100%; max-width: 1200px;
+    margin: auto;
+    padding: 20px 0;
+}
+
+#listBox5 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+    text-align: left;
+}
+
+#daumRoughmapContainer1749775627152 {
+    width: 100%; height: 380px;
+}
+
+.list5 a {
+    color: #0669BF;
+}
+
+.list5 a:hover {
+    text-decoration: underline;
+    color: #117302;
+}
+
+.input1 { /*입력 양식 공통*/
+    width: 100%; margin-bottom: 10px;
+    background: #ddd;
+    border: none; padding:1em;
+    font-size: 1.1em;
+    
+}
+
+.input1:focus { /*입력 양식에 커져가 있을 때*/
+    background: #e7e6fd;
+    outline-color: #1200b6;
+}
+
+.input2 { /*메시지 입력난을 위한 */
+    height: 150px;
+}
+
+.input3 {
+    display: block;
+    width: 100%;
+    background: #67BC04;
+    color: #fff; font-size: 1.2em;
+    padding: 0.5em ;
+    margin-top: 1em;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.input3:hover {
+    background: #000;
+}
+
+/*------------푸터 영역-------------*/
+
+#footer{
+    width: 100%; background: #222;
+    padding: 2em 0;
+}
+
+#footerBox {
+    width: 100% ;max-width: 1200px; margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #eee;
+}
+
+#logo2 {
+    filter: brightness(200); opacity: 0.8;
+}
+
+
+/*네비게이션 반응형 스타일(1000px 이하용)*/
+@media screen and (max-width:1000px) {
+    /* 1. 햄버거 버튼 오른쪽으로 보이기 */
+    #hamburger {
+        display: block; margin-left: auto;
+    }
+
+    /*2. 메뉴 스타일 변경-오른쪽 햄버거 버튼 아래*/
+    #menu {
+        background: rgba(55,166,3,0.7);
+        width: 200px; height: calc(100vh - 60px);
+        margin-left: auto;
+        display: block; 
+        transform: translateX(100%);
+        transition: 0.3s;
+    }
+
+    .main > a {color: #fff;}
+    .main > a:hover { background: rgba(0,0,0,.8);}
+    .main > a::after {display: none;}
+
+    #hamburger:hover + #menu, #menu:hover { 
+        display: block;
+        transform: translateX(0);
+    }
+
+    #navi {height: 60px;}
+}   /*네비게이션 반응형 스타일(1000px 이하용) ---끝---*/
+
+/*850px 이하 태블릿 화면용 스타일 */
+@media screen and (max-width:850px) {
+    #headerImage{
+        width: 200%;
+        transform: translateX(-25%);
+    }
+
+    /*화면 좌우 바깥 부분 숨기기*/
+    body { overflow-x: hidden;}
+
+    section { padding: 0 10px;}
+
+    #listBox1 {grid-template-columns: repeat(2, 1fr);}
+    #listBox4, #listBox5 {grid-template-columns: 1fr;}
+
+    .listBox3 {display: block; }
+    .list3 {width: 100%;}
+}
+
+/*450px 이하 태블릿 화면용 스타일 */
+@media screen and (max-width:450px) {
+    #headerImage{
+        width: 300%;
+        transform: translateX(-33%);
+    }
+
+   #title1 { font-size: 1.5rem;}
+   #title2 { font-size: 2rem;}
+
+   section { margin: 30px auto;}
+   .sectionTitle1 { font-size: 1.5rem;}
+    section h3 {font-size: 1.2rem;}
+
+   #listBox2 { grid-template-columns: 1fr;}
+
+    #footerBox { display: block; text-align: center;}
+
+}
+
+
+
+
+
+
